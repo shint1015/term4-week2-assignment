@@ -4,7 +4,7 @@
 App.jsx       -> Renders <Dashboard />
 Dashboard.jsx -> Owns count & count2, shows total + reset
 Counter.jsx   -> Displays count, +/- via setCount, shows last updated
-main.jsx      -> Bootstraps React, imports styles.css
+main.jsx      -> imports styles.css
 styles.css    -> Basic card + button styles
 ```
 
