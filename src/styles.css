@@ -1,0 +1,161 @@
+/* Base Reset Simplified */
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+        Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #e2ecf9);
+    color: #222;
+    -webkit-font-smoothing: antialiased;
+}
+
+:root {
+    --bg-card: #ffffff;
+    --bg-accent: #f0f5ff;
+    --border: #d9e2ef;
+    --text-muted: #555;
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --danger: #dc2626;
+    --danger-hover: #b91c1c;
+    --focus: 2px solid #2563eb55;
+    --transition: 0.18s ease;
+}
+
+.dashboard {
+    max-width: 780px;
+    margin: clamp(1rem, 4vh, 3rem) auto;
+    padding: 2.5rem 2rem 2.75rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow);
+}
+.dashboard h1 {
+    margin: 0 0 0.75rem;
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    letter-spacing: 0.5px;
+}
+.dashboard .total {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+}
+.dashboard .actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.counters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.25rem;
+}
+
+.counter-card {
+    padding: 1rem 1rem 1.15rem;
+    background: var(--bg-accent);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    position: relative;
+}
+.counter-card h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+.counter-card .value {
+    font-weight: 600;
+    font-size: 1.9rem;
+    line-height: 1;
+}
+
+.btn {
+    cursor: pointer;
+    font: inherit;
+    border: 1px solid var(--border);
+    background: #fff;
+    color: #222;
+    padding: 0.55rem 0.95rem;
+    border-radius: var(--radius-sm);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    position: relative;
+    transition: var(--transition);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+.btn:hover {
+    background: #f9fafb;
+}
+.btn:active {
+    transform: translateY(1px);
+}
+.btn:focus-visible {
+    outline: var(--focus);
+}
+
+.btn-primary {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+}
+.btn-primary:hover {
+    background: var(--primary-hover);
+}
+
+.btn-danger {
+    background: var(--danger);
+    border-color: var(--danger);
+    color: #fff;
+}
+.btn-danger:hover {
+    background: var(--danger-hover);
+}
+
+.btn-ghost {
+    background: transparent;
+}
+.btn-wide {
+    width: 100%;
+    justify-content: center;
+}
+
+.counter-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+}
+
+/* Utility */
+.flex {
+    display: flex;
+}
+.gap-sm {
+    gap: 0.5rem;
+}
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 600px) {
+    .dashboard {
+        padding: 1.8rem 1.25rem 2.2rem;
+    }
+    .counter-card {
+        padding: 0.85rem 0.85rem 1rem;
+    }
+    .counter-card .value {
+        font-size: 1.6rem;
+    }
+}
